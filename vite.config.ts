@@ -4,8 +4,9 @@ import react from "@vitejs/plugin-react-swc";
 import { tempo } from "tempo-devtools/dist/vite";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: mode === "development" ? "/" : "/portfolio/",  // 👈 important!
+export default defineConfig({
+  // Always root for custom domains
+  base: "/",
   optimizeDeps: {
     entries: ["src/main.tsx", "src/tempobook/**/*"],
   },
@@ -22,5 +23,6 @@ export default defineConfig(({ mode }) => ({
   server: {
     // @ts-ignore
     allowedHosts: true,
-  }
-}));
+  },
+});
+
